@@ -18,17 +18,6 @@
 
 </br>
 
-# Background
-
-With the AI entering the national strategic level agenda and the continuous innovation and breakthrough of AI technology, intelligent transportation system will become an inevitable development trend in the future. To realize the intuitive understanding and convenient means of transportation system, a large number of transportation information must be processed by using computer vision technology. In the application of this technology, it not only reduces the traffic congestion, realizes the smooth traffic during the transportation, but also reduces a large number of traffic accidents, and strengthens the traffic supervision and safety.
-
-# Preview
-
-Many users may find it too hard to deploy our project while we did not put it on the cloud instance for economic reasons. However, you can still see the effect by watching our  well prepared videos.
-
-**BiliBili**: [https://www.bilibili.com/video/BV1R5411Y7yL/](https://www.bilibili.com/video/BV1R5411Y7yL/)
-
-**Youtube**: [https://youtu.be/d30V_p2JPyM](https://youtu.be/d30V_p2JPyM)
 
 # Prerequisites
 
@@ -40,24 +29,20 @@ This is a program that **ONLY** runs on the **Ubuntu** server side(There is no n
 
 # Installation
 
-- Clone this repo by entering `git clone git@github.com:Sh-Zh-7/intelligent-transportation-system.git`
+- Clone this repo by entering `https://github.com/hoThanhThien/intelligent-transportation-system.git`
 - Download our pretrained model:
   - **yolo v4** on MS COCO dataset([[Google](https://drive.google.com/file/d/1eHZahK3nOQSJPveFVUKIQXZflt1Tf0ig/view?usp=sharing)]\[[Baidu](https://pan.baidu.com/s/1yHq0TX3dj80WSTljup1MtA), code: 4dm4]). Put it in `./model/Detection/keras_yolov4/model_data/` directory.
   - **MobileNet** as encoder and **SegNet** as decoder on zebra crossing images download on the Internet([[Google](https://drive.google.com/file/d/10wvSYLTB39wKp3rSmBbfHPd93aVOjcJE/view?usp=sharing)]\[[Baidu](https://pan.baidu.com/s/19S4A1GnlzONcLxXsji-lzg), code: yv6c]). Put it in `./model/Segmentation/segnet_mobile/` directory.
   - Other models, such as **DeepSort**'s weight, due to their  small sizes(not exceed Github's regular file's size), are already put in our repo.
 
 # Dependency
-
-- The model is mainly written by python, so you have to install the packages in requirements.txt. Before that, you'd better start a virtual environment by using conda.
-
 ```shell
 cd ITS		# Enter the project's root directory
 conda create -n {env_name}	# Make an env_name by yourself
-conda activate {env_name}
+conda activate {env_name} #conda activate its14
 chmod 777 build_linux.sh
 source build_linux.sh	# Install all dependencies of python
 ```
-
 - Then you need to install node.js dependencies to ensure that you can run the serve.
 
 ```shell
@@ -93,21 +78,6 @@ Before this, we get the position of the traffic light, and when dealing with vid
 And the pedestrians detection is based on newly come up model: **yolo v4**(2020 May). As for the car tracking, we introduce the deep sort algorithm, which is a **tracking model** based on object detecion, so we can reduce our project’s size.
 
 <img src="./assets/dynamic_jobs.png">
-
-# Combination jobs
-
-1. **Does the vehicle cross the line?** Judge whether the center point is higher than the lane line
-2. **Does the vehicle not wait for person?** Judge whether the car and person are on the crossing line at the same time.
-3. **Does the vehicle run the red light?** Judge whether the car is moving forward the the traffic light's color is red.
-4. **Does the vehicle drive without guidance?** Judge whether the car's moving direction is the same as its origin lane.
-
-You can see above that our implementation is very simple. That is because the real condition is in 3D world. But we don't have the camera's intrinsic or extrinsic matrix. So we have to judge all these conditons in 2D. So the implementation won't be too complex.
-
-# How to use
-
-Firstly I strongly recommend using this model through command line and python script only, though we still provide a web page for you. However, the backend only starts a child process to execute the python script, so it is not stable enough in some situations. **Remember, model is the core component of this repository.**
-
-</br>
 
 If you still want to start a web server, you can follow these steps:
 
