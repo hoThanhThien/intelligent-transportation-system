@@ -4,17 +4,6 @@
 
 <h1 align="center">Intelligent Transportation System</h1>
 
-<p align="center">
-    <a href="https://github.com/Sh-Zh-7/intelligent-transportation-system/issues" style="text-decoration:none" >
-        <img src="https://img.shields.io/github/issues/Sh-Zh-7/intelligent-transportation-system?color=orange" alt="issues"/>
-    </a>
-    <a href="https://github.com/Sh-Zh-7/ntelligent-transportation-system" style="text-decoration:none" >
-        <img src="https://img.shields.io/github/repo-size/Sh-Zh-7/intelligent-transportation-system" alt="Size"/>
-    </a>
-  <a href="https://github.com/Sh-Zh-7/intelligent-transportation-system/blob/master/LICENSE" style="text-decoration:none">
-        <img src="https://img.shields.io/github/license/Sh-Zh-7/intelligent-transportation-system" alt="license"/>
-    </a>
-</p>
 
 </br>
 
